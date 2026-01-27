@@ -1,10 +1,11 @@
 import random
 import time
-num= random.randint(1,100)
-print(num)
+print("Welcome to the guessing game.\n You have 5 attempts to guess the number between 1 and 100.\n GOOD LUCK")
 
 def Game():
-    print("Welcome to the guessing game.\n You have 5 attempts to guess the number between 1 and 100.\n GOOD LUCK")
+    num= random.randint(1,100)
+    #print(num)
+    
     for i in range(1,6):
         a = i
         guess= int(input(f"Enter guess #{a}: "))
@@ -15,13 +16,13 @@ def Game():
             print("Go lower")
         else:
             print("You have guessed correctly")
-            exit
+            break
 
 Game()
 
 while True:
     choice=input("You're all out of guesses! Would you like to try again?(y/n): ")
-    x=choice.islower
+    x=choice.lower()
     if x == "y":
         Game()
     if x== "n":
